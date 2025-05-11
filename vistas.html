@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Feliz Día Mamá</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Great Vibes', cursive;
+      background: linear-gradient(to bottom right, #f7c7d3, #e5a8c5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .card {
+      background: #fff0f5;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+      padding: 2em;
+      margin: 1em;
+      z-index: 1;
+      position: relative;
+    }
+
+    h1 {
+      color: #d6336c;
+      font-size: 2.5em;
+      margin-bottom: 0.5em;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .letter {
+      background: #f37373;
+      border-radius: 10px;
+      padding: 1.5em;
+      font-family: 'Pacifico', cursive, sans-serif;
+      line-height: 1.6em;
+      font-size: 1.2em;
+      color: #110703; /* color cálido anaranjado */
+      font-weight: bold; /* texto en negrita */
+    }
+
+    .signature {
+      margin-top: 1.5em;
+      font-style: italic;
+      font-size: 1.2em;
+      color: #fefff2;
+    }
+
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #ff534d;
+      transform: rotate(45deg);
+      animation: float 6s infinite ease-in;
+      opacity: 0.8;
+      z-index: 0;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: #c9455d;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Música de fondo -->
+  <audio autoplay loop>
+    <source src="https://docs.google.com/uc?export=download&id=1jOaoK1qChzAc1g6fyNVlaiEmaYMujFC5" type="audio/mpeg">
+    Tu navegador no soporta audio HTML5.
+  </audio>
+
+  <!-- Corazones animados -->
+  <script>
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 3 + 3) + "s";
+      heart.style.opacity = Math.random() * 0.5 + 0.5;
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 6000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+
+  <div class="card">
+    <h1>¡Feliz Día Mamá! 💖</h1>
+    <div class="letter">
+      Querida mamá:<br><br>
+      Hoy quiero recordarte cuánto te amo. Gracias por cada abrazo, cada palabra de aliento y cada sacrificio. 
+      Eres mi ejemplo, mi fuerza y mi mayor bendición.<br><br>
+      Te llevo siempre en mi corazón. Feliz día, reina hermosa.<br><br>
+      <div class="signature">Con todo mi amor,<br>Tu hijo Jack 💌</div>
+    </div>
+  </div>
+
+</body>
+</html>
+
